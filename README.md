@@ -22,8 +22,9 @@
 5. Compile and package the project  
 	`mvn clean compile package`
 
-6. Run the Consumer and Producer program  
+6. Run the Consumer,Producer and Stream program  
 	`java -jar ./target/1-1.0-SNAPSHOT-jar-with-dependencies.jar "consumer"`  
-	`java -jar ./target/1-1.0-SNAPSHOT-jar-with-dependencies.jar "producer"`
+	`java -jar ./target/1-1.0-SNAPSHOT-jar-with-dependencies.jar "producer"`  
+	`java -jar ./target/1-1.0-SNAPSHOT-jar-with-dependencies.jar "stream"`
 
  

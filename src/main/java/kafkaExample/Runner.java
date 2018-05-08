@@ -6,6 +6,8 @@ public class Runner {
             Producer.main(args);
         } else if (args[0].equals("consumer")) {
             Consumer.main(args);
+        } else if (args[0].equals("stream")) {
+            Stream.main(args);
         } else {
             throw new IllegalArgumentException("Don't know how to do " + args[0]);
         }
