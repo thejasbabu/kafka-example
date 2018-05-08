@@ -1,4 +1,4 @@
-package kafkaexample;
+package kafkaExample;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -16,14 +16,14 @@ public class Consumer {
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "test-consumer-group");
         KafkaConsumer consumer = new KafkaConsumer(props);
-        consumer.subscribe(Arrays.asList("odd", "even"));
+        consumer.subscribe(Arrays.asList("odd1", "even1"));
         int counter = 0;
         while (counter <= 1000) {
-            ConsumerRecords<String, String> recs = consumer.poll(100);
+            ConsumerRecords<String, String> recs = consumer.poll(10);
             if (recs.count() == 0) {
             } else {
                 for (ConsumerRecord<String, String> rec : recs) {
-                    System.out.printf("%s: %s", rec.key(), rec.value());
+                    System.out.printf("Recieved %s: %s", rec.key(), rec.value());
                 }
             }
             counter++;

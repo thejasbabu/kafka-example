@@ -28,7 +28,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        kafkaexample.Runner
+                                        kafkaExample.Runner
                                     </mainClass>
                                 </manifest>
                             </archive>
