@@ -16,9 +16,9 @@ public class Producer {
         for (int i = 0; i < 1000; i++) {
             ProducerRecord<String, String> data;
             if (i % 2 == 0) {
-                data = new ProducerRecord<String, String>("even1", 0, Integer.toString(i), String.format("%d is even", i));
+                data = new ProducerRecord<String, String>("even", 0, Integer.toString(i), String.format("%d is even", i));
             } else {
-                data = new ProducerRecord<String, String>("odd1", 0, Integer.toString(i), String.format("%d is odd", i));
+                data = new ProducerRecord<String, String>("odd", 0, Integer.toString(i), String.format("%d is odd", i));
             }
             producer.send(data);
             Thread.sleep(100L);

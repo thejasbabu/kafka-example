@@ -16,7 +16,7 @@ public class Consumer {
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "test-consumer-group");
         KafkaConsumer consumer = new KafkaConsumer(props);
-        consumer.subscribe(Arrays.asList("odd1", "even1"));
+        consumer.subscribe(Arrays.asList("odd", "even"));
         int counter = 0;
         while (counter <= 1000) {
             ConsumerRecords<String, String> recs = consumer.poll(10);
