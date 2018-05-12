@@ -19,7 +19,7 @@ public class FlinkConsumer {
         FlinkKafkaConsumer010<String> consumer = new FlinkKafkaConsumer010<>(topics, new SimpleStringSchema(), properties);
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         DataStreamSource<String> stream = env.addSource(consumer);
-        stream.map(new FlinkMapper());
+        stream.map(new FlinkMapper()).setParallelism(4);
         try {
             env.execute();
         } catch (Exception e) {

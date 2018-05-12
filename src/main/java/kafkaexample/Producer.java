@@ -21,7 +21,7 @@ public class Producer {
                 data = new ProducerRecord<String, String>("odd", 0, Integer.toString(i), String.format("%d is odd", i));
             }
             producer.send(data);
-            Thread.sleep(100L);
+            Thread.sleep(1L);
         }
         producer.close();
     }
